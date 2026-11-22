@@ -1,0 +1,9 @@
+# Données fournies par l'enseignante (trop lourdes, déjà en sa possession)
+donnees/*.csv
+*.zip
+# Fichiers temporaires
+*.log
+*.bak
+~$*
+.DS_Store
+Thumbs.db
