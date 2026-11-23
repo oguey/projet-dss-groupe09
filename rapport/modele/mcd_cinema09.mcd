@@ -1,0 +1,39 @@
+CATEGORIE: code_categorie, libelle
+:
+:
+CONCERNER, 0N SEANCE, 11 BILLET
+:
+:
+:
+
+CLASSER, 0N CATEGORIE, 11 SEANCE
+SEANCE: id_seance, libelle, debut, duree_minutes, capacite, prix_unitaire
+DETENIR, 0N SPECTATEUR, 11 BILLET
+BILLET: id_billet, date_billet, nb_places, montant, statut
+:
+:
+REGLER, 0N CARTE_ABONNEMENT, 01 BILLET
+
+:
+:
+SPECTATEUR: id_spectateur, nom, prenom, email, telephone, ville, date_inscription
+PAYER, 0N SPECTATEUR, 11 COMMANDE
+COMMANDE: id_commande, date_commande
+REGROUPER, 1N COMMANDE, 01 BILLET
+:
+
+PROGRAMMER, 0N CINEMA, 11 SEANCE
+CINEMA: id_cinema, nom, ville, role
+RATTACHER, 0N CINEMA, 11 SPECTATEUR
+SOUSCRIRE, 0N SPECTATEUR, 11 CARTE_ABONNEMENT
+:
+CARTE_ABONNEMENT: id_carte, date_debut, date_fin
+:
+
+:
+:
+:
+ACCES, 0N CARTE_ABONNEMENT, 0N CINEMA: date_premier_acces, nb_entrees
+CARTE_ILLIMITEE: tarif_mensuel
+/XT\ CARTE_ABONNEMENT => CARTE_ILLIMITEE, CARTE_PLACES
+CARTE_PLACES: nb_places_achetees, nb_places_restantes
